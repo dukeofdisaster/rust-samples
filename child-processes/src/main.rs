@@ -40,6 +40,8 @@ fn process_roundtrip() -> String {
 
     let stdin = cat_child.stdin.as_mut().expect("Could not attach to stdin");
 
+    // here we write to the child's stdin process; this is possible because we
+    // used as_mut() above
     stdin.write_all(b"datahere").expect("could not write to child process");
     String::from_utf8(
         cat_child
