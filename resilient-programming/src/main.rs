@@ -3,6 +3,8 @@ use std::io;
 
 fn print_file_contents_qm(filename: &str) -> Result<(), io::Error> {
     // initializes contents of contents are found
+    // otherwise, will exit cleanly because of the ? operator, i.e we
+    // skip checking the returned value entirely
     let contents = fs::read_to_string(filename)?;
     println!("File contents, external fn: {:?}", contents);
     Ok(())
