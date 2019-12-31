@@ -36,3 +36,31 @@ cargo new traits --lib
 Rust favors splitting behavior from data; behavior goes into a trait and data
 remains in the original struct. KeyValueConfigService doesn't manage any data, 
 it just reads and writes Config instances.
+
+## web shit with Rocket
+For whatever reason I decided to pay most attention to Rocket vs actix. The 
+dev on rocket seems very active, and the homepage was very detailed and thorough. 
+
+[rocket.rs - getting started](https://rocket.rs/v0.4/guide/getting-started/)
+
+Rocket requires nightly rust, but this is pretty easy as you have 2 options
+1. Use nightly as default : probably not recommended for beginners
+
+```
+rustup default nightly
+```
+
+2. After a project has been created, use nightly for that project only
+
+```
+cargo new myproject
+cd myproject
+rustup  override set nightly
+```
+
+3. "If your rocket app stops building, ensure you're using the latest version
+of Rust nightly and Rocket by updating your toolchain"
+
+```
+rustup update && cargo update
+```
