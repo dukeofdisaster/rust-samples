@@ -57,6 +57,14 @@ cargo new myproject
 cd myproject
 rustup  override set nightly
 ```
+- if successful, the above should have similar output detailing the override for the dir
+
+```
+info: using existing install for 'nightly-x86_64-unknown-linux-gnu'
+info: override toolchain for '/home/boxuser/gitstuff/rust-samples/hello-rocket' set to 'nightly-x86_64-unknown-linux-gnu'
+
+  nightly-x86_64-unknown-linux-gnu unchanged - rustc 1.42.0-nightly (da3629b05 2019-12-29)
+```
 
 3. "If your rocket app stops building, ensure you're using the latest version
 of Rust nightly and Rocket by updating your toolchain"
