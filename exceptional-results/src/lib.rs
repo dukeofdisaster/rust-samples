@@ -18,6 +18,7 @@ mod tests {
     fn negative_results() {
         let err: Result<i32, f32> = Err(-42.0);
         let ok: Result<i32, f32> = Ok(-41);
+        
         assert_eq!(err.or_else(|r| Ok(r as i32+1)), ok);
         assert_eq!(err.map(|r| r+1), Err(-42.0));
         assert_eq!(err.map_err(|r| r+1.0), Err(-41.0));
